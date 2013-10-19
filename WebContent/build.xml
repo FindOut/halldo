@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="runserver">
+    <target name="runserver">
+        <echo>hej!</echo>
+    	<exec executable="/usr/bin/chromium-browser" spawn="true">
+    		<arg value="http://localhost:8000/form-builder.html"/>
+    	</exec>
+    	<exec executable="/usr/bin/python">
+    		<arg value="-m"/>
+    		<arg value="SimpleHTTPServer"/>
+    	</exec>
+    </target>
+</project>

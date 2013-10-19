@@ -113,7 +113,8 @@ angular.module('threeCanvas', [])
 			var imagePrefix = scope.path;
 			var directions  = ["posx", "negx", "posy", "negy", "posz", "negz"];
 			var imageSuffix = scope.suffix;
-			var skyGeometry = new THREE.CubeGeometry( 5000, 5000, 5000 );	
+			var skyGeometry = new THREE.CubeGeometry( 5000, 5000, 5000 );
+//			skyGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 2500, 0));
 			
 			var materialArray = [];
 			for (var i = 0; i < 6; i++)
