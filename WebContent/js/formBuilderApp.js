@@ -16,10 +16,11 @@ angular.module('formBuilderApp', [ 'threeCanvas' ]).directive(
             color : '#ffffff'
           });
           
-          var geom = new THREE.CubeGeometry(size[0], size[1] - scope.config.wallThickness, size[2]);
+          var roofDown = scope.config.wallThickness / 2;
+          var geom = new THREE.CubeGeometry(size[0], size[1] + scope.config.wallThickness - roofDown, size[2]);
           var cube = new THREE.Mesh(geom, new THREE.MeshLambertMaterial({color: '#ffffff'}));
           var m4 = new THREE.Matrix4();
-          cube.geometry.applyMatrix(m4.makeTranslation(0, -(size[1] - scope.config.wallThickness) / 2, 0));
+          cube.geometry.applyMatrix(m4.makeTranslation(0, -(size[1] - scope.config.wallThickness + roofDown) / 2, 0));
           threeCanvasCtrl.scene.add(cube);
 
           threeCanvasCtrl.scene.add(makeWallMeshRotateMove(0,

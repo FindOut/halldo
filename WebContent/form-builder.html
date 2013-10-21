@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="formBuilderApp">
   <head>
-    <title>three-canvas test</title>
+    <title>Hall-builder</title>
     <link href="css/threeCanvas.css" rel="stylesheet"/>
     <script src="vendor/angular.js"></script>
     <script src="vendor/jquery-1.9.1.js"></script>
@@ -15,7 +15,7 @@
   <body ng-controller="Contr">
     <three-canvas width="1500" height="800">
       <ambient-light color="#555555"></ambient-light>
-      <point-light pos="100, 200, 50" color="#ffffff"></point-light>
+      <directional-light pos="100, 200, 50" color="#ffffff" intensity="0.5"></directional-light>
 <!--       <sky-box path="images/footballfield3-" suffix=".jpg"></sky-box> -->
       <building pos="buildingpos" config="config"></building>
     </three-canvas>

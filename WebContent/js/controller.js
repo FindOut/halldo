@@ -3,6 +3,10 @@ function Contr($scope) {
 
 	$scope.config = {
 		size : '50,10,30',
-		wallThickness: 1
+		wallThickness: 0.7,
+		doors: [{
+		  wall: 0,
+		  position: 0
+		}]
 	};
 }

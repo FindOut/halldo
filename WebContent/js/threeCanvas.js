@@ -77,19 +77,33 @@ angular.module('threeCanvas', [])
   };
 })
 .directive('pointLight', function() {
-	  return {
-	    require: '^threeCanvas',
-	    restrict: 'E',
-	    transclude: true,
-	    scope: { pos: '@', color: '@'},
-	    link: function(scope, element, attrs, threeCanvasCtrl) {
-	      var light = new THREE.PointLight(scope.color);
-	      light.position.set.apply(light.position, strTofloatArray(scope.pos));
-	      threeCanvasCtrl.scene.add(light);
-	    },
-	    replace: true
-	  };
-	})
+  return {
+    require: '^threeCanvas',
+    restrict: 'E',
+    transclude: true,
+    scope: { pos: '@', color: '@'},
+    link: function(scope, element, attrs, threeCanvasCtrl) {
+      var light = new THREE.PointLight(scope.color);
+      light.position.set.apply(light.position, strTofloatArray(scope.pos));
+      threeCanvasCtrl.scene.add(light);
+    },
+    replace: true
+  };
+})
+.directive('directionalLight', function() {
+  return {
+    require: '^threeCanvas',
+    restrict: 'E',
+    transclude: true,
+    scope: { pos: '@', color: '@', intensity: '@'},
+    link: function(scope, element, attrs, threeCanvasCtrl) {
+      var light = new THREE.DirectionalLight( scope.color, scope.intensity );
+      light.position.set.apply(light.position, strTofloatArray(scope.pos));
+      threeCanvasCtrl.scene.add(light);
+    },
+    replace: true
+  };
+})
 .directive('ambientLight', function() {
 	  return {
 	    require: '^threeCanvas',
