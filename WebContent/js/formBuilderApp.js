@@ -9,7 +9,7 @@ angular.module('formBuilderApp', [ 'threeCanvas' ])
       config : '='
     },
     link : function(scope, element, attrs, threeCanvasCtrl) {
-      threeCanvasCtrl.scene.add(new HouseBuilder(scope).build());
+      threeCanvasCtrl.scene.add(new HouseBuilder(scope.config).build());
     },
     replace : true
   };
