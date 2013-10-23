@@ -1,4 +1,4 @@
-function Contr($scope) {
+function HallController($scope) {
 	$scope.buildingpos = new THREE.Vector3(1, 0, 0);
 
 	$scope.config = {
@@ -6,7 +6,8 @@ function Contr($scope) {
 		wallThickness: 0.7,
 		doors: [{
 		  wall: 0,
-		  position: 0
+		  position: 0,
+		  size: [3, 5]
 		}]
 	};
 }

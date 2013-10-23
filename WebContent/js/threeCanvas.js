@@ -21,6 +21,8 @@ angular.module('threeCanvas', [])
       var camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 10000);
       var renderer = new THREE.WebGLRenderer({canvas: elm[0], antialias: true});
       renderer.setSize(scope.width, scope.height);
+      camera.position.x = 40;
+      camera.position.y = 10;
       camera.position.z = 50;
       
       var changed = true;

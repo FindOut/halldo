@@ -56,7 +56,6 @@ function HouseBuilder(config) {
     wall.add(makeWallSideMesh(width, height, thickness, material));
     return wall;
   }
-    
   
   function makeWallSideMesh(width, height, thickness, material) {
     var lidPath = getWallSidePath(width, height, thickness);
@@ -76,6 +75,16 @@ function HouseBuilder(config) {
     shape.lineTo(0, width);
     shape.lineTo(height, width);
     shape.lineTo(height, 0);
+    
+    var doorShape = new THREE.Shape();
+    var w2 = width / 2, h2 = height / 2;
+    var w10 = config.doors[0].size[0], h10 = config.doors[0].size[1];
+    doorShape.moveTo(h2, w2);
+    doorShape.lineTo(h2 + h10, w2);
+    doorShape.lineTo(h2 + h10, w2 + w10);
+    doorShape.lineTo(h2, w2 + w10);
+    shape.holes.push(doorShape);
+    
     return shape;
   }
 

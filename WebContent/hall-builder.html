@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html ng-app="formBuilderApp">
   <head>
-    <title>Hall-builder</title>
+    <title>Hall Builder</title>
     <link href="css/threeCanvas.css" rel="stylesheet"/>
     <script src="vendor/angular.js"></script>
     <script src="vendor/jquery-1.9.1.js"></script>
     <script src="vendor/three-r58.js"></script>
     <script src="vendor/OrbitControls.js"></script>
-    <script src="vendor/ThreeCSG.js"></script>
     <script src="vendor/common.js"></script>
     <script src="js/threeCanvas.js"></script>
-    <script src="js/HouseBuilder.js"></script>
+    <script src="js/HallBuilder.js"></script>
     <script src="js/formBuilderApp.js"></script>
-    <script src="js/controller.js"></script>
+    <script src="js/HallController.js"></script>
   </head>
-  <body ng-controller="Contr">
+  <body ng-controller="HallController">
     <three-canvas width="1500" height="800">
-      <ambient-light color="#555555"></ambient-light>
-      <directional-light pos="100, 200, 50" color="#ffffff" intensity="0.5"></directional-light>
-<!--       <sky-box path="images/footballfield3-" suffix=".jpg"></sky-box> -->
-      <building pos="buildingpos" config="config"></building>
+	    <ambient-light color="#555555"></ambient-light>
+	    <directional-light pos="100, 200, 50" color="#ffffff" intensity="0.5"></directional-light>
+<!-- 	    <sky-box path="images/footballfield3-" suffix=".jpg"></sky-box> -->
+	    <building pos="buildingpos" config="config"></building>
     </three-canvas>
   </body>
 </html>
